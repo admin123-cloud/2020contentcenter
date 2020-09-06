@@ -1,2 +1,27 @@
+# web应用服务端口
 server:
   port: 8443
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://localhost:3306/socket?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+#mybatis:
+#  mapper-locations: classpath:*/*.xml
+logging:
+  level:
+    root: info
+    com.zimug.boot.launch.controller: debug
+  file:
+    path: D:\apps\logs
+    name: D:\apps\logs\run.log
+    max-size: 10MB
+    max-history: 30
+  pattern:
+    console: '%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger : %msg%n'

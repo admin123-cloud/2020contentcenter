@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huawei.module1.mapper.SocketMapper">
+    <insert id="insert" parameterType="com.huawei.module1.model.Socket">
+    insert into socket (codeId, codeName, appearance,
+      territory)
+    values (#{codeId,jdbcType=BIGINT}, #{codeName,jdbcType=VARCHAR}, #{appearance,jdbcType=BIGINT},
+      #{territory,jdbcType=VARCHAR})
+  </insert>
+</mapper>

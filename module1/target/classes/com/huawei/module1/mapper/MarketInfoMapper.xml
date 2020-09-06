@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huawei.module1.mapper.MarketInfoMapper">
+    <select id="queryMarketInfo" parameterType="com.huawei.module1.model.MarketInfo" resultType="com.huawei.module1.model.MarketInfo">
+        select * from market
+        <where>
+            <!-- 动态拼接sql查询条件 -->
+                 scnumber = #{scnumber}
+            <if test="market != null and market != ''">
+                and market = #{market}
+            </if>
+        </where>
+  </select>
+</mapper>

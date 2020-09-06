@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huawei.module1.mapper.PriceMapper">
+    <insert id="addPriceModel" parameterType="com.huawei.module1.model.Price">
+    insert into price (codeId,name,open,end,low,hight,time,volume,Turnover) values
+   (#{item.codeId},#{item.name},#{item.open},#{item.end},#{item.low},#{item.hight},#{item.time},#{item.volume},#{item.Turnover})
+  </insert>
+
+    <insert id="addPriceList" parameterType="java.util.Arraylist">
+        insert into price(codeId,name,open,end,low,hight,time,volume,Turnover) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.codeId},#{item.name},#{item.open},#{item.end},#{item.low},#{item.hight},#{item.time},#{item.volume},#{item.Turnover})
+        </foreach>
+    </insert>
+</mapper>
